@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rodrigo Achadinhos - Melhores Ofertas da Shopee</title>
+    
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)n._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    // COLOQUE O ID DO SEU PIXEL DO META AQUI ABAIXO:
+    fbq('init', 'SEU_ID_DO_PIXEL_AQUI'); 
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=SEU_ID_DO_PIXEL_AQUI&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <style>
+        /* ESTILOS GERAIS */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f9;
+            color: #333;
+        }
+
+        /* CABEÇALHO */
+        header {
+            background-color: #1e293b;
+            color: #fff;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #38bdf8;
+        }
+
+        .badge-afiliado {
+            background-color: #ee4d2d;
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 5px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        /* BANNER PRINCIPAL VITRINE SHOPEE */
+        .showcase-banner {
+            background: linear-gradient(135deg, #fff2ef 0%, #ffe4de 100%);
+            border: 2px solid #ee4d2d;
+            border-radius: 12px;
+            padding: 1.8rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 12px rgba(238, 77, 45, 0.15);
+        }
+
+        .showcase-title {
+            color: #d73211;
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .showcase-desc {
+            color: #555;
+            font-size: 0.95rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .showcase-btn {
+            background-color: #ee4d2d;
+            color: white;
+            padding: 0.85rem 1.8rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            font-size: 1rem;
+            transition: background-color 0.2s, transform 0.2s;
+            box-shadow: 0 3px 8px rgba(238, 77, 45, 0.3);
+        }
+
+        .showcase-btn:hover {
+            background-color: #d73211;
+            transform: scale(1.03);
+        }
+
+        /* CAMPO DE PESQUISA */
+        .search-container {
+            margin-bottom: 2rem;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.8rem 1.2rem;
+            border: 2px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .search-input:focus {
+            border-color: #ee4d2d;
+        }
+
+        /* CONTAINER PRINCIPAL */
+        .container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        /* GRID DE PRODUTOS */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image-container {
+            width: 100%;
+            height: 180px;
+            background-color: #e2e8f0;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .product-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-placeholder {
+            color: #64748b;
+            font-size: 0.85rem;
+            text-align: center;
+            padding: 0.5rem;
+        }
+
+        .product-title {
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            height: 2.6rem;
+            font-weight: 600;
+        }
+
+        .product-price {
+            font-size: 1.2rem;
+            color: #059669;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .affiliate-btn {
+            background-color: #ee4d2d;
+            color: white;
+            border: none;
+            padding: 0.75rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            font-size: 0.95rem;
+        }
+
+        .affiliate-btn:hover {
+            background-color: #d73211;
+        }
+
+        /* RESPONSIVIDADE */
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Rodrigo Achadinhos</div>
+        <div class="badge-afiliado">🔥 Achadinhos Shopee</div>
+    </header>
+
+    <div class="container">
+        <!-- BANNER DIRETO PARA A SUA VITRINE SHOPEE -->
+        <div class="showcase-banner">
+            <h2 class="showcase-title">🛍️ Conheça a Nossa Vitrine Completa!</h2>
+            <p class="showcase-desc">Acesse todos os achadinhos, promoções e ofertas imperdíveis direto na nossa coleção oficial da Shopee.</p>
+            <a href="https://collshp.com/rodrigoachadinhosoficial?view=storefront" 
+               target="_blank" 
+               onclick="fbq('track', 'Lead');" 
+               class="showcase-btn">
+               Acessar Vitrine Rodrigoachadinhosoficial 🛒
+            </a>
+        </div>
+
+        <!-- CAMPO DE PESQUISA -->
+        <div class="search-container">
+            <input type="text" id="search-input" class="search-input" placeholder="🔍 Buscar achadinho pelo nome..." onkeyup="filterProducts()">
+        </div>
+
+        <!-- Vitrine de Produtos Destaque -->
+        <main>
+            <div class="products-grid" id="products-container"></div>
+        </main>
+    </div>
+
+    <script>
+        // Link padrão para a sua vitrine completa na Shopee
+        const MAIN_STOREFRONT_URL = "https://collshp.com/rodrigoachadinhosoficial?view=storefront";
+
+        // Todos os seus produtos
+        const products = [
+            { 
+                id: 1,
+                name: "Câmera De Segurança Externa Lente Dupla V3/ICSEE Com Sirene 4G/WiFi 6MP Full HD 4K 360° Visão Noturna", 
+                price: 164.98, 
+                image: "https://down-br.img.susercontent.com/file/br-11134207-7r98o-lx2rbb4o3zfa0f.webp", 
+                link: "https://s.shopee.com.br/4qGcFoDlrS" 
+            },
+            { 
+                id: 2,
+                name: "Campainha Com Câmera Vídeo Porteiro Sem Fio Wi-Fi HD Inteligente Smart Home", 
+                price: 49.88, 
+                image: "https://down-br.img.susercontent.com/file/sg-11134201-7rd54-lx366z5zcf9a9f.webp", 
+                link: "https://s.shopee.com.br/7fancxdf2W" 
+            },
+            { 
+                id: 3,
+                name: "Rack de Armazenamento de Banheiro em Alumínio Dourado Preto MEIDOO", 
+                price: 39.00, 
+                image: "https://down-br.img.susercontent.com/file/br-11134207-7r98o-lst4tms29w9m2f.webp", 
+                link: "https://s.shopee.com.br/9Kj1bwM4HC" 
+            },
+            { 
+                id: 4,
+                name: "HMaston MS17 Mouse Sem Fio Recarregável Bluetooth", 
+                price: 120.00, 
+                image: "https://down-br.img.susercontent.com/file/sg-11134201-825b1-mr6ounihyw3w84.webp", 
+                link: "https://s.shopee.com.br/9zyg2SSsAT" 
+            }
+        ];
+
+        // Renderizar produtos na tela
+        function renderProducts(itemsToRender = products) {
+            const container = document.getElementById('products-container');
+            container.innerHTML = '';
+
+            if (itemsToRender.length === 0) {
+                container.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: #64748b; padding: 2rem;">Nenhum produto encontrado.</p>`;
+                return;
+            }
+
+            itemsToRender.forEach(product => {
+                const card = document.createElement('div');
+                card.className = 'product-card';
+                
+                const imageContent = product.image 
+                    ? `<img src="${product.image}" alt="${product.name}">` 
+                    : `<div class="product-placeholder">Sem imagem cadastrada</div>`;
+
+                const productLink = product.link || MAIN_STOREFRONT_URL;
+
+                card.innerHTML = `
+                    <div class="product-image-container">
+                        ${imageContent}
+                    </div>
+                    <div class="product-title" title="${product.name}">${product.name}</div>
+                    <div class="product-price">R$ ${product.price.toFixed(2).replace('.', ',')}</div>
+                    <a href="${productLink}" 
+                       target="_blank" 
+                       onclick="fbq('track', 'Lead');" 
+                       class="affiliate-btn">
+                       Ver Oferta na Shopee 🛒
+                    </a>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Função de filtro pela barra de pesquisa
+        function filterProducts() {
+            const query = document.getElementById('search-input').value.toLowerCase();
+            const filtered = products.filter(product => 
+                product.name.toLowerCase().includes(query)
+            );
+            renderProducts(filtered);
+        }
+
+        // Inicializar
+        renderProducts();
+    </script>
+</body>
+</html>
