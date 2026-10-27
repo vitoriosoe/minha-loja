@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rodrigo Achadinhos - Melhores Ofertas da Shopee</title>
     
+    <!-- Meta de Verificação da Awin -->
+    <meta name="awin-verification" content="Awin">
+
     <!-- Meta Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
@@ -240,7 +243,7 @@
             <p class="showcase-desc">Acesse todos os achadinhos, promoções e ofertas imperdíveis direto na nossa coleção oficial da Shopee.</p>
             <a href="https://collshp.com/rodrigoachadinhosoficial?view=storefront" 
                target="_blank" 
-               onclick="fbq('track', 'Lead');" 
+               onclick="if(typeof fbq === 'function') fbq('track', 'Lead');" 
                class="showcase-btn">
                Acessar Vitrine Rodrigoachadinhosoficial 🛒
             </a>
@@ -266,28 +269,28 @@
             { 
                 id: 1,
                 name: "Chaleira Elétrica Inox 1,8L 1000W - Aquecimento Rápido, Fácil Limpeza, Design Moderno e Durável", 
-                price: 39,88, 
+                price: 39.88, 
                 image: "https://down-br.img.susercontent.com/file/br-11134207-820m1-mmabfixk90qv68.webp", 
                 link: "https://s.shopee.com.br/6q1njJL0SG" 
             },
             { 
                 id: 2,
                 name: "Parafusadeira Furadeira 25V Nakasaki Sem Fio a Bateria Profissional Kit Completo com Maleta", 
-                price: 89,99, 
+                price: 89.99, 
                 image: "https://down-br.img.susercontent.com/file/br-11134207-820lt-msq8pkzchmh355.webp", 
                 link: "https://s.shopee.com.br/8pms7CGwMn" 
             },
             { 
                 id: 3,
                 name: "Carregador de bateria automotivo inteligente 12 V - Display Digital Automático Energia Reparação Puls", 
-                price: 49,88, 
+                price: 49.88, 
                 image: "https://down-br.img.susercontent.com/file/br-11134207-7r98o-ma9vuzkgahfab7.webp", 
                 link: "https://s.shopee.com.br/3B8VMseUN9" 
             },
             { 
                 id: 4,
                 name: "Fone Bluetooth Sem Fio De Ouvido BT-760 TWS Macaron Headphone Fone de Ouvido Envio Imediato", 
-                price: 39,50, 
+                price: 39.50, 
                 image: "https://down-br.img.susercontent.com/file/br-11134207-820mf-mrk5q70ufqx31a.webp", 
                 link: "https://s.shopee.com.br/9zyg2SSsAT" 
             }
@@ -296,6 +299,8 @@
         // Renderizar produtos na tela
         function renderProducts(itemsToRender = products) {
             const container = document.getElementById('products-container');
+            if (!container) return;
+            
             container.innerHTML = '';
 
             if (itemsToRender.length === 0) {
@@ -308,7 +313,7 @@
                 card.className = 'product-card';
                 
                 const imageContent = product.image 
-                    ? `<img src="${product.image}" alt="${product.name}">` 
+                    ? `<img src="${product.image}" alt="${product.name}" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\\'product-placeholder\\'>Imagem indisponível</div>';">` 
                     : `<div class="product-placeholder">Sem imagem cadastrada</div>`;
 
                 const productLink = product.link || MAIN_STOREFRONT_URL;
@@ -321,7 +326,7 @@
                     <div class="product-price">R$ ${product.price.toFixed(2).replace('.', ',')}</div>
                     <a href="${productLink}" 
                        target="_blank" 
-                       onclick="fbq('track', 'Lead');" 
+                       onclick="if(typeof fbq === 'function') fbq('track', 'Lead');" 
                        class="affiliate-btn">
                        Ver Oferta na Shopee 🛒
                     </a>
@@ -339,8 +344,10 @@
             renderProducts(filtered);
         }
 
-        // Inicializar
-        renderProducts();
+        // Garante a execução quando a página estiver totalmente carregada
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProducts();
+        });
     </script>
 </body>
 </html>
